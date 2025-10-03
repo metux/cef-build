@@ -62,11 +62,9 @@ mkdir -p code/chromium_git
 (
     cd ~/code
     if [ ! -f depot_tools.git/.git/config ]; then
-        git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+        git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
     fi
 )
 
-(
-    cd ~/code/automate
-    wget https://bitbucket.org/chromiumembedded/cef/raw/master/tools/automate/automate-git.py
-)
+mkdir -p code/automate
+curl https://bitbucket.org/chromiumembedded/cef/raw/master/tools/automate/automate-git.py > code/automate
