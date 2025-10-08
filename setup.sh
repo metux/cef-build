@@ -66,5 +66,5 @@ mkdir -p code/chromium_git
     fi
 )
 
-mkdir -p code/automate
-curl https://bitbucket.org/chromiumembedded/cef/raw/master/tools/automate/automate-git.py > code/automate
+#mkdir -p code/automate
+#curl https://bitbucket.org/chromiumembedded/cef/raw/master/tools/automate/automate-git.py > code/automate
