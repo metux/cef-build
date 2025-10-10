@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ROOT=$HOME/src/netcom/cef-build
+# ROOT=$HOME/src/netcom/cef-build
+ROOT=/media/stick2/dev/cef-build
 
 python3 \
     ../automate/automate-git.py \
