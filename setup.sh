@@ -48,6 +48,8 @@ sudo apt-get install \
   xvfb \
   xz-utils \
 
+exit 1
+
 mkdir -p code
 mkdir -p code/automate
 mkdir -p code/chromium_git
@@ -59,12 +61,12 @@ mkdir -p code/chromium_git
 #    python3 -m pip install dataclasses importlib_metadata
 #)
 
-(
-    cd ~/code
-    if [ ! -f depot_tools.git/.git/config ]; then
-        git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
-    fi
-)
+#(
+#    cd ~/code
+#    if [ ! -f depot_tools.git/.git/config ]; then
+#        git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
+#    fi
+#)
 
 #mkdir -p code/automate
 #curl https://bitbucket.org/chromiumembedded/cef/raw/master/tools/automate/automate-git.py > code/automate
