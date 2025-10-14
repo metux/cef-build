@@ -35,9 +35,9 @@ clone_pkg_single() {
     )
 }
 
-#clone_pkg_single $CODE_DIR              depot_tools $DEPOT_TOOLS_REPO $DEPOT_TOOLS_BRANCH
-#clone_pkg_single $CODE_DIR/chromium_git cef         $CEF_REPO         $CEF_BRANCH
-## clone_pkg_single $CODE_DIR/chromium_git chromium-1  $CHROMIUM_REPO    $CHROMIUM_BRANCH
+clone_pkg_single $CODE_DIR              depot_tools $DEPOT_TOOLS_REPO $DEPOT_TOOLS_BRANCH
+clone_pkg_single $CODE_DIR/chromium_git cef         $CEF_REPO         $CEF_BRANCH
+clone_pkg_single $CODE_DIR/chromium_git/chromium src $CHROMIUM_REPO    $CHROMIUM_BRANCH
 
 #awk '{print $2}' $ROOT/chromium-fetch-tags | ( \
 #    cd $CHROMIUM_WORKDIR
