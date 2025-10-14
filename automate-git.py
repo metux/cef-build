@@ -1475,7 +1475,7 @@ if force_config:
 if not options.nochromiumupdate and not os.path.exists(chromium_src_dir):
   chromium_checkout_new = True
   sync_args = '--nohooks '
-
+  sync_args += '--shallow '
   if options.chromiumarchive != '':
     msg('Extracting %s to %s' % (options.chromiumarchive, chromium_src_dir))
     if not options.dryrun:

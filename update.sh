@@ -63,7 +63,7 @@ clone_pkg_single $CODE_DIR/chromium_git chromium-1  $CHROMIUM_REPO    $CHROMIUM_
 
 export GCLIENT_SHALLOW=1
 
-exit 1
+# exit 1
 
 python3 \
     $ROOT/automate-git.py \
