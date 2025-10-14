@@ -1516,9 +1516,10 @@ else:
   # local history.
   if not options.nochromiumupdate and os.path.exists(chromium_src_dir):
     # Fetch updated sources.
-    run("%s fetch" % (git_exe), chromium_src_dir)
+    msg("DISABLED calling git-fetch on chromium ...")
+#    run("%s fetch --depth=1" % (git_exe), chromium_src_dir)
     # Also fetch tags, which are required for release branch builds.
-    run("%s fetch --tags" % (git_exe), chromium_src_dir)
+#    run("%s fetch --tags" % (git_exe), chromium_src_dir)
 
   # Determine if the Chromium checkout needs to change.
   if not options.nochromiumupdate and os.path.exists(chromium_src_dir):
