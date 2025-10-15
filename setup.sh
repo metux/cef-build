@@ -48,7 +48,8 @@ sudo apt-get install \
   xvfb \
   xz-utils \
   libcups2-dev \
-  libpci-dev
+  libpci-dev \
+  libkrb5-dev
 
 exit 1
 
