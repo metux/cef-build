@@ -1516,7 +1516,7 @@ else:
   # local history.
   if not options.nochromiumupdate and os.path.exists(chromium_src_dir):
     # Fetch updated sources.
-#    msg("DISABLED calling git-fetch on chromium ...")
+    msg("DISABLED calling git-fetch on chromium ...")
 #    run("%s fetch --depth=1" % (git_exe), chromium_src_dir)
     # Also fetch tags, which are required for release branch builds.
 #    run("%s fetch --tags" % (git_exe), chromium_src_dir)
