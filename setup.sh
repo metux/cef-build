@@ -47,6 +47,7 @@ sudo apt-get install \
   wdiff \
   xvfb \
   xz-utils \
+  libcups2-dev
 
 exit 1
 
