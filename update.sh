@@ -70,5 +70,7 @@ python3 \
     --no-distrib \
     --no-build
 
+echo "automate-git.py finished"
+
 ## compress
 # third_party/boringssl --> which commit ?
