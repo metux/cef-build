@@ -5,8 +5,7 @@ set -e
 ROOT=`pwd`
 
 export GCLIENT_SHALLOW=1
-
-# mkdir -p ./code/chromium_git/chromium/src/out/Debug_GN_x86
+export GN_DEFINES_VERBOSE=1
 
 python3 \
     $ROOT/automate-git.py \
