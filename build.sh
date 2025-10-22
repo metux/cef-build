@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# run a full build (requires repos to be already cloned via `update.sh`)
+#
+# WARNING: this can take over 10 hours (over 30.000 c++ sources to compile) !
+# It's also patching lots of chromium sources, so incremental rebuild still
+# triggers most sources to be recompiled.
 
 set -e
 
@@ -22,4 +28,6 @@ python3 \
     --branch="$CEF_BRANCH" \
     --build-log-file \
     --force-distrib \
-    --tools-distrib
+    --tools-distrib \
+    --no-debug-tests \
+    --no-release-tests

@@ -1,4 +1,16 @@
 #!/bin/bash
+#
+# Special magic for cloning the sources step by step
+# (just cloning - for building use `build.sh`)
+#
+# Has to be so complicated, because otherwise automate-git.py will try
+# to clone >100GB at once, which usually fails due network problems
+# as well as load limiting on Google's servers
+#
+# It really smells like the whole thing isn't supposed to be built
+# from outside of Google :o
+#
+# Note: re-running this usually ends up in full rebuild (>10 hours)
 
 set -e
 
@@ -29,17 +41,9 @@ clone_pkg_single $CODE_DIR/chromium_git cef         $CEF_REPO         $CEF_BRANC
 clone_pkg_single $CODE_DIR/chromium_git/chromium src $CHROMIUM_REPO    $CHROMIUM_BRANCH
 clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_BRANCH
 
-#awk '{print $2}' $ROOT/chromium-fetch-tags | ( \
-#    cd $CHROMIUM_WORKDIR
-#    ls -la
-#    while read ref ; do
-#        echo "REF: $ref"
-#        git fetch --depth=1 origin "$ref:$ref"
-#    done
-#)
-
+# only fetching the chromium tags that CEF wants to build against
+# needs to be adapted for newer CEF revisions
 (
-    echo "fetching refs/tags/141.0.7390.0"
     cd $CHROMIUM_WORKDIR
     if ! git rev-parse -q --verify "refs/tags/141.0.7390.0" >/dev/null; then
         git fetch --depth=1 origin refs/tags/141.0.7390.0:refs/tags/141.0.7390.0
@@ -49,12 +53,7 @@ clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_
     fi
 )
 
-# mkdir $CHROMIUM_WORKDIR/thirdparty
-# clone_pkg_single $CHROMIUM_WORKDIR/thirdparty
-
 export GCLIENT_SHALLOW=1
-
-# exit 1
 
 python3 \
     $ROOT/automate-git.py \
@@ -63,8 +62,3 @@ python3 \
     --no-distrib \
     --no-build \
     --url="$CEF_REPO"
-
-echo "automate-git.py finished"
-
-## compress
-# third_party/boringssl --> which commit ?
