@@ -49,7 +49,7 @@ clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_
         git fetch --depth=1 origin refs/tags/141.0.7390.0:refs/tags/141.0.7390.0
     fi
     if ! git rev-parse -q --verify "refs/tags/142.0.7444.0" >/dev/null; then
-        git fetch --depth=1 origin refs/tags/142.0.7444.0.0:refs/tags/142.0.7444.0
+        git fetch --depth=1 origin refs/tags/142.0.7444.0:refs/tags/142.0.7444.0
     fi
 )
 
