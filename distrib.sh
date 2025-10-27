@@ -15,3 +15,6 @@ python ./code/chromium_git/chromium/src/cef/tools/make_distrib.py \
     --ninja-build \
     --x64-build \
     --no-format
+
+( cd /code/chromium_git/chromium/src/cef/binary_distrib && \
+  tar -xjfv cef.tar.bz2 cef_binary_*_linux64 )
