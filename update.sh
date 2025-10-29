@@ -55,6 +55,11 @@ clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_
     if ! git rev-parse -q --verify "refs/tags/142.0.7444.0" >/dev/null; then
         git fetch --depth=1 origin refs/tags/142.0.7444.0:refs/tags/142.0.7444.0
     fi
+
+    git remote rm mtx || true
+    git remote add mtx git@github.com:metux/cef-chromium.git || true # might already be there
+    git remote update mtx
+    git checkout $CEF_BRANCH
 )
 
 export GCLIENT_SHALLOW=1
@@ -65,4 +70,6 @@ python3 \
     --depot-tools-dir=$ROOT/code/depot_tools \
     --no-distrib \
     --no-build \
-    --url="$CEF_REPO"
+    --url="$CEF_REPO" \
+    --checkout="$CEF_BRANCH" \
+    --no-chromium-update
