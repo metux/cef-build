@@ -10,7 +10,7 @@ DEPOT_TOOLS_BRANCH="main"
 
 #CEF_REPO="https://bitbucket.org/chromiumembedded/cef.git"
 CEF_REPO="https://github.com/metux/cef-suckless"
-CEF_BRANCH="master"
+CEF_BRANCH="wip_views-fixes"
 
 CHROMIUM_REPO="https://chromium.googlesource.com/chromium/src.git"
 CHROMIUM_BRANCH="main"
