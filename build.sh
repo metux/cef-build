@@ -31,7 +31,7 @@ python3 \
     --no-update \
     --no-debug-build \
     --url="$CEF_REPO" \
-    --branch="$CEF_BRANCH" \
+    --checkout="$CEF_BRANCH" \
     --build-log-file \
     --force-distrib \
     --tools-distrib \
