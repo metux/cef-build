@@ -14,6 +14,7 @@ ROOT=`pwd`
 
 export GCLIENT_SHALLOW=1
 export GN_DEFINES_VERBOSE=1
+export CEF_ARCHIVE_FORMAT=tar.bz2
 
 python3 \
     $ROOT/automate-git.py \
