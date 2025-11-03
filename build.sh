@@ -18,6 +18,9 @@ export CEF_ARCHIVE_FORMAT=tar.bz2
 
 ( cd code/chromium_git/chromium/src/cef && git remote update && git checkout -f origin/$CEF_BRANCH )
 
+rm -Rf ./code/chromium_git/chromium/src/cef/binary_distrib
+mkdir -p ./code/chromium_git/chromium/src/cef/binary_distrib
+
 python3 \
     $ROOT/automate-git.py \
     --download-dir=$ROOT/code/chromium_git \
