@@ -16,6 +16,8 @@ export GCLIENT_SHALLOW=1
 export GN_DEFINES_VERBOSE=1
 export CEF_ARCHIVE_FORMAT=tar.bz2
 
+( cd code/chromium_git/chromium/src/cef && git remote update && git checkout -f origin/$CEF_BRANCH )
+
 python3 \
     $ROOT/automate-git.py \
     --download-dir=$ROOT/code/chromium_git \
