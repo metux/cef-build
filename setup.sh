@@ -55,4 +55,11 @@ sudo apt-get install \
   xz-utils \
   libcups2-dev \
   libpci-dev \
-  libkrb5-dev
+  libkrb5-dev \
+  doygen \
+  libva-dev \
+  libx11-xcb-dev \
+  libxcb-xkb-dev \
+  libxkbcommon-x11-dev \
+  x11-xkb-utils \
+  xcb
