@@ -29,4 +29,4 @@ How to use ?
 * install dependencies via `setup.sh` (tested on Devuan, possibly different on other Distros)
 * clone or update sources via `update.sh` (can easily take half a day!)
 * full build via `build.sh` (may take a whole day)
-* create distribution tarballs via `distrib.sh`
+* tarballs are placed in: ./code/chromium_git/chromium/src/cef/binary_distrib
