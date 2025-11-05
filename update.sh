@@ -41,6 +41,13 @@ clone_pkg_single $CODE_DIR/chromium_git cef         $CEF_REPO         $CEF_BRANC
 clone_pkg_single $CODE_DIR/chromium_git/chromium src $CHROMIUM_REPO    $CHROMIUM_BRANCH
 clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_BRANCH
 
+# add upstream to our work clone
+(
+    cd $CODE_DIR/chromium_git/cef
+    git remote add upstream https://bitbucket.org/chromiumembedded/cef.git || true
+    git remote update upstream
+)
+
 # only fetching the chromium tags that CEF wants to build against
 # needs to be adapted for newer CEF revisions
 (
