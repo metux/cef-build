@@ -57,8 +57,8 @@ clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_
     fi
 
     git remote rm mtx || true
-    git remote add mtx https://github.com/metux/cef-suckless || true
-#    git remote add mtx git@github.com:metux/cef-chromium.git || true # might already be there
+#    git remote add mtx https://github.com/metux/cef-suckless || true
+    git remote add mtx git@github.com:metux/cef-chromium.git || true # might already be there
     git remote update mtx
 )
 
