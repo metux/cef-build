@@ -70,4 +70,11 @@ python3 \
     --depot-tools-dir=$ROOT/code/depot_tools \
     --no-distrib \
     --no-build \
-    --url="$CEF_REPO"
+    --url="$CEF_REPO" \
+    --checkout="$CEF_BRANCH" \
+
+# use our own branch
+#(
+#    cd $CHROMIUM_WORKDIR
+#    git checkout cef_142.0.7444.0
+#)
