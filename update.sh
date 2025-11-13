@@ -60,6 +60,7 @@ clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_
 #    git remote add mtx https://github.com/metux/cef-suckless || true
     git remote add mtx git@github.com:metux/cef-chromium.git || true # might already be there
     git remote update mtx
+    git checkout cef_142.0.7444.0_WIP
 )
 
 export GCLIENT_SHALLOW=1
@@ -72,6 +73,7 @@ python3 \
     --no-build \
     --url="$CEF_REPO" \
     --checkout="$CEF_BRANCH" \
+    --no-chromium-update
 
 # use our own branch
 #(
