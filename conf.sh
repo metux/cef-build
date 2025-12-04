@@ -13,5 +13,5 @@ CEF_REPO="https://github.com/metux/cef-suckless"
 CEF_BRANCH="master"
 
 CHROMIUM_REPO="https://chromium.googlesource.com/chromium/src.git"
-CHROMIUM_BRANCH="main"
+CHROMIUM_BRANCH="cef_142.0.7444.0_WIP"
 CHROMIUM_WORKDIR="$ROOT/code/chromium_git/chromium/src"

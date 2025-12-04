@@ -59,7 +59,8 @@ clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_
     git remote rm mtx || true
     git remote add mtx git@github.com:metux/cef-chromium.git || true # might already be there
     git remote update mtx
-    git checkout $CEF_BRANCH
+    echo "checking out $CHROMIUM_BRANCH"
+    git checkout $CHROMIUM_BRANCH
 )
 
 export GCLIENT_SHALLOW=1
