@@ -5,7 +5,7 @@ set -e
 BINARY_DIR=./code/chromium_git/chromium/src/cef/binary_distrib
 DOWNLOAD_DIR=tmp
 
-RELEASE="2025-12-03-02"
+RELEASE="2026-01-12-01"
 
 die() {
     echo "ERR: $*" >&2
