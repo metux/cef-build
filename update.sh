@@ -73,6 +73,14 @@ python3 \
     --no-build \
     --url="$CEF_REPO" \
     --checkout="$CEF_BRANCH" \
+    --force-config \
     --no-chromium-update
 
-( cd code/chromium_git/chromium/src/ && ./tools/clang/scripts/update.py )
+export PATH="$ROOT/code/depot_tools:$PATH"
+
+(
+    cd code/chromium_git/chromium
+    while ! gclient sync --no-history --jobs 8 --verbose ; do
+        echo "glient sync failed. need to retry"
+    done
+)

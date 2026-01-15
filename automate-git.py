@@ -1417,7 +1417,10 @@ msg("CEF Output Directory: %s" % (out_dir))
 create_directory(chromium_dir)
 
 gclient_file = os.path.join(chromium_dir, '.gclient')
+msg("gclient_file=%s" % gclient_file)
 force_config = not os.path.exists(gclient_file) or options.forceconfig
+
+msg("force_config=%s" % force_config)
 
 # Extract <version> from a value like 'refs/tags/<version>'.
 chromium_version = chromium_checkout.split('/')[2]

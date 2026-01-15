@@ -21,10 +21,10 @@ export CEF_ARCHIVE_FORMAT=tar.bz2
 rm -Rf ./code/chromium_git/chromium/src/cef/binary_distrib
 mkdir -p ./code/chromium_git/chromium/src/cef/binary_distrib
 
-if [ ! -f code/chromium_git/chromium/src/build/util/LASTCHANGE.committime ]; then
-    echo "--> need to create code/chromium_git/chromium/src/build/util/LASTCHANGE.committime"
-    echo -n "1759201371" > code/chromium_git/chromium/src/build/util/LASTCHANGE.committime
-fi
+#if [ ! -f code/chromium_git/chromium/src/build/util/LASTCHANGE.committime ]; then
+#    echo "--> need to create code/chromium_git/chromium/src/build/util/LASTCHANGE.committime"
+#    echo -n "1759201371" > code/chromium_git/chromium/src/build/util/LASTCHANGE.committime
+#fi
 
 notify-send "CEF compile starting" -a "CEF BUILD" -e || true
 
@@ -34,6 +34,7 @@ if python3 \
     --depot-tools-dir=$ROOT/code/depot_tools \
     --minimal-distrib \
     --x64-build \
+    --force-config \
     --force-build \
     --no-update \
     --no-debug-build \
