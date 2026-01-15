@@ -16,3 +16,9 @@ CHROMIUM_UPSTREAM_REPO="https://chromium.googlesource.com/chromium/src.git"
 CHROMIUM_UPSTREAM_TAG="142.0.7444.0"
 CHROMIUM_BRANCH="cef_142.0.7444.0"
 CHROMIUM_WORKDIR="$ROOT/code/chromium_git/chromium/src"
+
+if [ "$ANONYMOUS" ]; then
+    CHROMIUM_MTX_REPO=https://github.com/metux//cef-chromium.git
+else
+    CHROMIUM_MTX_REPO=git@github.com:metux/cef-chromium.git
+fi
