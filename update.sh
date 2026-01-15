@@ -74,3 +74,17 @@ python3 \
     --url="$CEF_REPO" \
     --checkout="$CEF_BRANCH" \
     --no-chromium-update
+
+export PATH="$ROOT/code/depot_tools:$PATH"
+
+## need to explicitly run gclient sync with multiple tries:
+##
+## sometimes the weak Google servers collapsing under their own load,
+## leading to disrupted pulls, and neither automate-git.py nor gclient
+## properly taking care of those disruptions
+(
+    cd code/chromium_git/chromium
+    while ! gclient sync --no-history --jobs 8 --verbose ; do
+        echo "glient sync failed. need to retry"
+    done
+)
