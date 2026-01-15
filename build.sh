@@ -21,7 +21,9 @@ export CEF_ARCHIVE_FORMAT=tar.bz2
 rm -Rf ./code/chromium_git/chromium/src/cef/binary_distrib
 mkdir -p ./code/chromium_git/chromium/src/cef/binary_distrib
 
-python3 \
+notify-send "CEF compile starting" -a "CEF BUILD" -e || true
+
+if python3 \
     $ROOT/automate-git.py \
     --download-dir=$ROOT/code/chromium_git \
     --depot-tools-dir=$ROOT/code/depot_tools \
@@ -36,4 +38,11 @@ python3 \
     --force-distrib \
     --tools-distrib \
     --no-debug-tests \
-    --no-release-tests
+    --no-release-tests ; \
+then
+    echo "---> build succeed"
+    notify-send "CEF compile finished: OKAY" -a "CEF BUILD" -e || true
+else
+    echo "---> build failed"
+    notify-send "CEF compile finished: FAILED" -a "CEF BUILD" -e || true
+fi
