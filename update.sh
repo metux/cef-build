@@ -74,3 +74,5 @@ python3 \
     --url="$CEF_REPO" \
     --checkout="$CEF_BRANCH" \
     --no-chromium-update
+
+( cd code/chromium_git/chromium/src/ && ./tools/clang/scripts/update.py )
