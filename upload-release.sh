@@ -2,10 +2,10 @@
 
 set -e
 
+. conf.sh
+
 BINARY_DIR=./code/chromium_git/chromium/src/cef/binary_distrib
 DOWNLOAD_DIR=tmp
-
-RELEASE="2026-01-21-01"
 
 die() {
     echo "ERR: $*" >&2
@@ -19,14 +19,14 @@ echo "Using CEF tarball: $FN"
 
 [ -f "$FN" ] || die "cant find tarball file: $FN"
 
-UPLOAD_FILE=cef_binary-$RELEASE.tar.bz2
+UPLOAD_FILE="cef_binary-$CEFSDK_RELEASE.tar.bz2"
 
 rm -Rf tmp
 mkdir -p tmp
 
 cp $FN tmp/$UPLOAD_FILE
 
-gh release create $RELEASE tmp/$UPLOAD_FILE \
+gh release create "$CEFSDK_RELEASE" "tmp/$UPLOAD_FILE" \
     --repo metux/cef-chromium \
-    --title "prebuilt CEF binary: $RELEASE" \
+    --title "prebuilt CEF binary: $CEFSDK_RELEASE" \
     --notes "built locally"
