@@ -16,7 +16,13 @@ export GCLIENT_SHALLOW=1
 export GN_DEFINES_VERBOSE=1
 export CEF_ARCHIVE_FORMAT=tar.bz2
 
-( cd code/chromium_git/chromium/src/cef && git remote update && git checkout -f origin/$CEF_BRANCH )
+(
+    cd code/chromium_git/chromium/src/cef
+    git remote update
+    git remote prune origin
+    git fetch origin +refs/heads/$CEF_BRANCH:refs/remotes/origin/$CEF_BRANCH
+    git checkout -f $CEF_BRANCH
+)
 
 rm -Rf ./code/chromium_git/chromium/src/cef/binary_distrib
 mkdir -p ./code/chromium_git/chromium/src/cef/binary_distrib

@@ -41,6 +41,12 @@ clone_pkg_single $CODE_DIR/chromium_git cef         $CEF_REPO         $CEF_BRANC
 clone_pkg_single $CODE_DIR/chromium_git/chromium src     $CHROMIUM_UPSTREAM_REPO  $CHROMIUM_UPSTREAM_TAG
 clone_pkg_single $CODE_DIR/chromium_git/chromium/src cef $CEF_REPO         $CEF_BRANCH
 
+# fetch current CEF_BRANCH (in case of switched)
+(
+    cd $CODE_DIR/chromium_git/cef
+    git fetch origin $CEF_BRANCH
+)
+
 # add upstream to our work clone
 (
     cd $CODE_DIR/chromium_git/cef
