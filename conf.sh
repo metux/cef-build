@@ -17,7 +17,7 @@ CHROMIUM_BRANCH="cef_145.0.7632.0"
 CHROMIUM_WORKDIR="$ROOT/code/chromium_git/chromium/src"
 
 # used by our upload-release.sh script
-CEFSDK_RELEASE="2026-01-21-01"
+CEFSDK_RELEASE="145.0.7632.0-2026-02-10-01"
 
 if [ "$ANONYMOUS" ]; then
     CHROMIUM_MTX_REPO=https://github.com/metux//cef-chromium.git
