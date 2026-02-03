@@ -21,7 +21,9 @@ export CEF_ARCHIVE_FORMAT=tar.bz2
     git remote update
     git remote prune origin
     git fetch origin +refs/heads/$CEF_BRANCH:refs/remotes/origin/$CEF_BRANCH
-    git checkout -f $CEF_BRANCH
+    git branch -D __old || true
+    git branch -m __old
+    git checkout -f origin/$CEF_BRANCH -b $CEF_BRANCH
 )
 
 rm -Rf ./code/chromium_git/chromium/src/cef/binary_distrib
