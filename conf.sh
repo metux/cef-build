@@ -8,9 +8,8 @@ DEPOT_TOOLS_DIR=$CODE_DIR/depot_tools
 DEPOT_TOOLS_REPO="https://chromium.googlesource.com/chromium/tools/depot_tools.git"
 DEPOT_TOOLS_BRANCH="main"
 
-#CEF_REPO="https://bitbucket.org/chromiumembedded/cef.git"
 CEF_REPO="https://github.com/metux/cef-suckless"
-CEF_BRANCH="wip/update_2"
+CEF_BRANCH="suckless-145.0.7632.0"
 
 CHROMIUM_UPSTREAM_REPO="https://chromium.googlesource.com/chromium/src.git"
 CHROMIUM_UPSTREAM_TAG="145.0.7632.0"
